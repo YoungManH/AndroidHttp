@@ -3,6 +3,7 @@ package com.jason.androidhttp;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mWebView = (WebView) findViewById(R.id.webview);
-        mSendUrlTest = new SendUrlTest("http://www.baidu.com");
+        mSendUrlTest = new SendUrlTest("https://www.baidu.com");
+        mSendUrlTest.execute();
     }
 
     @Override
@@ -44,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            mWebView.loadData(s, "text/html","charset=utf-8");
+            Log.e("onPostExecute:","------------------------------------------");
+            Log.e("onPostExecute:",s);
+            Log.e("onPostExecute:","------------------------------------------");
+
+            mWebView.loadData(s, "text/html;charset=utf-8",null);
         }
     }
 }
