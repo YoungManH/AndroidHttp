@@ -11,7 +11,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -32,7 +31,7 @@ public class HttpUtil {
             HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 
             //设置5秒超时
-            conn.setConnectTimeout(15000);
+            conn.setConnectTimeout(5000);
 
             //设置请求方式
             conn.setRequestMethod("GET");
