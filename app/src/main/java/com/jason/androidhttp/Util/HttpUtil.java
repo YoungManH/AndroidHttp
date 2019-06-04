@@ -1,4 +1,4 @@
-package com.jason.androidhttp;
+package com.jason.androidhttp.Util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

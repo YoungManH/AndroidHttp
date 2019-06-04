@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.widget.ImageView;
 
-import com.google.okhttp.OkHttpConnection;
+import com.jason.androidhttp.Util.HttpUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        
+
         super.onDestroy();
         if (mSendUrlTest != null) {
             mSendUrlTest.cancel(true);
